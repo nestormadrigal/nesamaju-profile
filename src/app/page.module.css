@@ -1,2 +1,13 @@
 .page {
+  background-color: #222;
+  .btn {
+    border-color: #efefef;
+    border-width: 2px;
+  }
+}
+
+.page .btn {
+  /* background: #f00; */
+  border-color: #efefef;
+  border-width: 2px;
 }
