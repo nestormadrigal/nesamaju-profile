@@ -1,48 +1,11 @@
 'use client';
-import styles from './page.module.css';
 import React from 'react';
-// import { Button, useButton } from '@mui/base';
-import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import CssBaseLine from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Drawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import IconButton from '@mui/material/IconButton/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Button from '@mui/material/Button';
-import { ListItemButton, ListItemText } from '@mui/material';
-import {
-  useNavigate,
-  Link as RouterLink,
-  MemoryRouter,
-  BrowserRouter,
-  Routes,
-  Route,
-  Outlet,
-} from 'react-router-dom';
-import { StaticRouter } from 'react-router-dom/server';
-import RootLayout from './layout';
-import Link from 'next/link';
 
-interface Props {
-  window?: () => Window;
-  component?: React.ReactNode;
-}
-
-function Router(props: { children?: React.ReactNode }) {
-  const { children } = props;
-  if (typeof window == 'undefined') {
-    return <StaticRouter location="/">{children}</StaticRouter>;
-  }
-  return <MemoryRouter>{children}</MemoryRouter>;
-}
-
-export default function Index(props: Props) {
+export default function Index() {
   /*
    * Replace the elements below with your own.
    *
