@@ -1,9 +1,17 @@
 'use client';
 import React from 'react';
+import parse from 'html-react-parser';
+import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
+import { Container, Drawer } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import { userProfile } from './lib/placeholder-data';
+import nsAvatar from '.ns-avatar.jpeg';
 
 export default function Index() {
   /*
@@ -12,43 +20,72 @@ export default function Index() {
    * Note: The corresponding styles are in the ./index.css file.
    */
   const profileName = 'Nestor Madrigal';
-  const profileDesc = `
-  Software Engineer overall 15 years of experience in software development life cycle using a variety of programming languages, Frameworks and tools specialized for WEB development, special detail on creating interfaces (HTML5, CSS3, Javascript, Typescript, Jquery and Bootstrap, angular 4+, Cypress test, just for mention few tools) always taking care of the look and feel in a balance with performance. 
-  Solid experience in different Programming language, Object Oriented Programming concepts and MVC pattern (C#, PHP, Python, Java) 
-  Strong experience and certified on Amazon Web Services (AWS cloud practitioner) 
-  Willing to share knowledge and coach team members when needed, I'm a person that likes to implement and improve communication skills everyday also coordinate the relationship between team members in different countries or time zones when needed.
-  Experience with performance and optimization problems and a demonstrated ability to both diagnose and prevent these problems.
-  Strong experience on analysis, development, maintenance of Databases SQL and non-SQL (MySQL, SQL Server, Postres, MongoDB)
-  `;
-
-  const card = (
+  const profileDesc = userProfile.profileDescription;
+  // const profileDesc = `
+  // Software Engineer overall 15 years of experience in software development life cycle using a variety of programming languages, Frameworks and tools specialized for WEB development, special detail on creating interfaces (HTML5, CSS3, Javascript, Typescript, Jquery and Bootstrap, angular 4+, Cypress test, just for mention few tools) always taking care of the look and feel in a balance with performance.
+  // Solid experience in different Programming language, Object Oriented Programming concepts and MVC pattern (C#, PHP, Python, Java)
+  // Strong experience and certified on Amazon Web Services (AWS cloud practitioner)
+  // Willing to share knowledge and coach team members when needed, I'm a person that likes to implement and improve communication skills everyday also coordinate the relationship between team members in different countries or time zones when needed.
+  // Experience with performance and optimization problems and a demonstrated ability to both diagnose and prevent these problems.
+  // Strong experience on analysis, development, maintenance of Databases SQL and non-SQL (MySQL, SQL Server, Postres, MongoDB)
+  // `;
+  const drawerWidth = 240;
+  const bioCard = (
     <React.Fragment>
-      <Typography
-        // sx={{ fontSize: 20 }}
-        variant="h2"
-        color="text.primary"
-        gutterBottom
-        align="center"
-      >
-        {profileName}
-      </Typography>
-      <Typography
-        // sx={{ fontSize: 20 }}
-        variant="h4"
-        color="text.secondary"
-        align="center"
-      >
-        Software Engineer
-      </Typography>
+      <Stack spacing={4} mt={4} sx={{ alignItems: 'center' }}>
+        {/* <img src="./static/images/avatar/ns-avatar.jpeg" alt="avatar" /> */}
+        <Avatar
+          alt="Nestor avatar"
+          src="./images/avatar/ns-avatar.jpeg"
+          sx={{ width: 120, height: 120 }}
+        />
+        <Typography
+          // sx={{ fontSize: 20 }}
+          variant="h4"
+          gutterBottom
+          align="center"
+        >
+          {profileName}
+        </Typography>
+        <Typography
+          // sx={{ fontSize: 20 }}
+          variant="h6"
+          color="text.secondary"
+          align="center"
+        >
+          Software Engineer
+        </Typography>
 
-      <CardContent></CardContent>
+        <CardContent></CardContent>
+      </Stack>
     </React.Fragment>
   );
 
   return (
     <Box component="main" sx={{ px: 5, py: 3 }}>
       <Toolbar />
-      <Typography>{profileDesc}</Typography>
+
+      <Container maxWidth="xl" className="mt-4">
+        <Grid container spacing={3}>
+          <Grid xs={4}>
+            <Card
+              variant="outlined"
+              sx={{ height: '80vh', backgroundColor: '#374151' }}
+            >
+              {bioCard}
+            </Card>
+          </Grid>
+          <Grid xs={8}>
+            <Card variant="outlined">
+              <CardContent>
+                <Typography sx={{ fontSize: 20 }}>
+                  {parse(profileDesc)}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+      </Container>
     </Box>
     // <div className={styles.page}>
     //   <div className="wrapper">

@@ -67,7 +67,7 @@ export default function Layout(props: Props) {
     },
     {
       pathname: '/certifications',
-      title: 'Education',
+      title: 'Certifications',
     },
   ];
 
@@ -102,7 +102,7 @@ export default function Layout(props: Props) {
     <Box sx={{ display: 'flex' }}>
       <CssBaseLine />
 
-      <AppBar component="nav">
+      <AppBar component="nav" position="fixed">
         <Toolbar>
           <IconButton
             color="inherit"

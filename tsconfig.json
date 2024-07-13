@@ -35,6 +35,7 @@
     "src/**/*.tsx",
     "src/**/*.js",
     "src/**/*.jsx",
+    "src/**/*.jpeg",
     ".next/types/**/*.ts",
     "dist/nesamaju-profile/.next/types/**/*.ts",
     "next-env.d.ts"

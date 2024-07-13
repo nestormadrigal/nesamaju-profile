@@ -25,7 +25,14 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // }
 
 export default function Page() {
+  const ary = [1, 2, 3, 4, 5];
+
   return (
+    // for (let index = 0; index < ary.length; index++) {
+    //   const element = ary[index];
+
+    // }
+
     <Box component="main" sx={{ px: 5, py: 3 }}>
       <Toolbar />
       <Typography>Experience view</Typography>
